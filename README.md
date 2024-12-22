@@ -11,7 +11,7 @@ The **Video Summarization Platform** using Python Flask is a comprehensive web a
 
 ## Screenshot
 
-![Video Summarization Platform]()
+![Video Summarization Platform](Assets_results)
 
 ## Prerequisites
 
