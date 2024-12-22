@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SummarEyeसार</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("https://e0.pxfuel.com/wallpapers/602/141/desktop-wallpaper-circuit-board-technology-background-purple-and-blue-light-banner-electronic-system-concept-7523400-vector-art-at-vecteezy.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        color: #120219;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        height: 90%;
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .summary-section {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .summary-box {
+        background-color: rgb(188 156 226);
+        padding: 10px;
+        border-radius: 10px;
+        flex: 1;
+        margin: 5px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .label {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #250a46;
+      }
+
+      .card {
+        background-color: rgb(222 173 242);
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        color: black;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      button,
+      .go-back-btn {
+        width: 150px;
+        padding: 10px;
+        background-color: #250a46;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, background-color 0.2s;
+        text-decoration: none;
+      }
+
+      button:hover,
+      .go-back-btn:hover {
+        background-color: #512d6d;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="color: white">SummarEyeसार</h1>
+
+      <div class="summary-section">
+        <div class="summary-box">
+          <p class="label">Summary (Marathi):</p>
+          <p>{{ summary }}</p>
+        </div>
+        <div class="summary-box">
+          <p class="label">Summary (Hindi):</p>
+          <p>{{ summaryh }}</p>
+        </div>
+        <div class="summary-box">
+          <p class="label">Summary (English):</p>
+          <p>{{ summarym }}</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="label">Predicted Label:</p>
+        <p>{{ predicted_label }}</p>
+      </div>
+
+      <div class="button-container">
+        <form action="/translate" method="post">
+          <input type="hidden" name="text" value="{{ summary }}" />
+          <input type="hidden" name="lang" value="en" />
+          <button type="submit">Download English Summary</button>
+        </form>
+        <form action="/translate" method="post">
+          <input type="hidden" name="text" value="{{ summaryh }}" />
+          <input type="hidden" name="lang" value="hi" />
+          <button type="submit">Download Hindi Summary</button>
+        </form>
+        <form action="/translate" method="post">
+          <input type="hidden" name="text" value="{{ summarym }}" />
+          <input type="hidden" name="lang" value="mr" />
+          <button type="submit">Download Marathi Summary</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="go-back-btn">Go Back</a>
+      </div>
+    </div>
+  </body>
+</html>

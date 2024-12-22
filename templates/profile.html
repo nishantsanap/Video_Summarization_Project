@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice to Text Synthesis</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://e0.pxfuel.com/wallpapers/602/141/desktop-wallpaper-circuit-board-technology-background-purple-and-blue-light-banner-electronic-system-concept-7523400-vector-art-at-vecteezy.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(
+          206,
+          175,
+          244,
+          0.8
+        ); /* Semi-transparent background */
+        color: #250a46;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(247, 4, 4, 0.1);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border: 2px solid #150e42;
+        border-radius: 8px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #65195b;
+        color: white;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+
+      tr:nth-child(even) {
+        background-color: #ffffff;
+      }
+
+      td {
+        font-size: 14px;
+      }
+
+      .go-back-btn {
+        display: inline-block;
+        background-color: #65195b;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .go-back-btn:hover {
+        background-color: #250dae;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SummarEye सार</h1>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>TimeStamp</th>
+            <th>Filename</th>
+            <th>Link</th>
+            <th>Label</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in records %}
+          <tr>
+            <td>{{ record.timestamp }}</td>
+            <td>{{ record.filename }}</td>
+            <td>{{ record.link }}</td>
+            <td>{{ record.label }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- Go Back button -->
+      <a href="{{ url_for('index') }}" class="go-back-btn">Go Back</a>
+    </div>
+  </body>
+</html>

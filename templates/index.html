@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SummarEyeसार</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://e0.pxfuel.com/wallpapers/602/141/desktop-wallpaper-circuit-board-technology-background-purple-and-blue-light-banner-electronic-system-concept-7523400-vector-art-at-vecteezy.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+      }
+
+      h1 {
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 46px;
+        font-family: revert-layer;
+      }
+
+      h2 {
+        color: #250a46;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgb(206 175 244);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input[type="file"],
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #250a46;
+        border-radius: 14px;
+      }
+
+      input[type="submit"] {
+        display: block;
+        width: 50%;
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 150px;
+        background-color: #2c035e;
+        color: #fff;
+        border: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #500bf1;
+      }
+
+      /* Added styles for navbar */
+      .navbar {
+        background-color: #250a46;
+        overflow: hidden;
+        height: 51px;
+      }
+
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 21px;
+        text-decoration: none;
+        display: inline-block;
+        width: 106px;
+        border: 1px solid white;
+        border-radius: 140px;
+        margin: 6px 7px;
+        height: 42px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+      }
+
+      .navbar a:hover {
+        background-color: #500bf1;
+        color: #fff;
+        box-shadow: 0.5px 0.5px 5px 0.5px #fff;
+      }
+
+      .logout-btn {
+        float: right;
+      }
+      .language-buttons {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .language-buttons button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #500bf1;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        /* box-shadow: 1px 1px 10px 1px #fff; */
+      }
+      .language-buttons button:hover {
+        background-color: #250a46;
+        box-shadow: 1px 1px 10px 1px #fff;
+      }
+      .container1 {
+        max-width: 120rem;
+        margin: 0 auto;
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: left;
+        gap: 15%;
+      }
+
+      .hero-section {
+        padding: 3rem 3rem 1rem 3rem;
+      }
+
+      .hero-content {
+        max-width: 45%;
+      }
+
+      .hero-image {
+        max-width: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+      }
+
+      .hero-image img {
+        max-width: 97%;
+        border-radius: 25px;
+        height: 550px;
+        box-shadow: 3px 1px 12px 2px #ceaff4;
+      }
+
+      .hero-content h1 {
+        padding: 3%;
+        font-family: "Luckiest Guy", cursive;
+        font-size: 50px;
+
+        text-shadow: 0 0.1em 20px rgba(0, 0, 0, 1),
+          0.05em -0.03em 0 rgba(0, 0, 0, 1), 0.05em 0.005em 0 rgba(0, 0, 0, 1),
+          0em 0.08em 0 rgba(0, 0, 0, 1), 0.05em 0.08em 0 rgba(0, 0, 0, 1),
+          0px -0.03em 0 rgba(0, 0, 0, 1), -0.03em -0.03em 0 rgba(0, 0, 0, 1),
+          -0.03em 0.08em 0 rgba(0, 0, 0, 1), -0.03em 0 0 rgba(0, 0, 0, 1);
+      }
+      .hero-para {
+        color: antiquewhite;
+        font-size: 15px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .para {
+        line-height: 20px;
+        font-size: 14px;
+      }
+
+      /* .box {
+        padding: 2%;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div>
+        <div class="logo"></div>
+      </div>
+      <a href="/login" id="loginBtn">Login</a>
+      <a href="/signup" id="signupBtn">Signup</a>
+      <a href="/profile" id="profileBtn" style="display: none">
+        <i class="fa-solid fa-user-tie"></i> Profile</a
+      >
+      <a href="/logout" id="logoutBtn" class="logout-btn" style="display: none"
+        ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+      >
+    </div>
+
+    <section class="hero-section">
+      <div class="container1">
+        <div class="hero-content">
+          <h1><span id="s1">"SummarEye</span><span id="s2">सार"</span></h1>
+          <marquee behavior="slide" direction="right" class="hero-para">
+            <pre class="para">
+               Simplify your content consumption with our instant video summarization
+             tool. Save time and focus on what matters most.Our platform delivers
+             concise summaries from lengthy videos empowering efficient information
+             processing.Save you many hours every week!!
+            </pre>
+          </marquee>
+
+          <div class="language-buttons">
+            <button onclick="showMarathiForm()">Marathi</button>
+            <button onclick="showEnglishForm()">English</button>
+          </div>
+          <form
+            id="englishForm"
+            action="/get_notes_y"
+            method="post"
+            style="display: none"
+          >
+            <h2 for="youtube_link">
+              <i class="fa-brands fa-youtube"></i> Provide YouTube Link
+            </h2>
+            <input
+              type="text"
+              id="youtube_link"
+              name="youtube_link"
+              placeholder="Enter YouTube link"
+            /><br />
+            <input type="submit" value="Generate Summary" />
+          </form>
+
+          <form
+            id="marathiForm"
+            action="/get_notes"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <h2 for="video_file">
+              <i class="fa-solid fa-file-arrow-up"></i> Upload Video File
+            </h2>
+            <input
+              type="file"
+              id="video_file"
+              name="video"
+              accept="video/*"
+            /><br />
+            <input type="submit" value="Generate Summary" />
+          </form>
+        </div>
+        <div class="hero-image">
+          <img src="/static/img2.png" src alt="Logo" />
+        </div>
+      </div>
+    </section>
+    <section class="box"></section>
+
+    <script>
+      // Check if user is logged in.
+      const isLoggedIn = true;
+      const loginBtn = document.getElementById("loginBtn");
+      const signupBtn = document.getElementById("signupBtn");
+      const profileBtn = document.getElementById("profileBtn");
+      const logoutBtn = document.getElementById("logoutBtn");
+
+      if (isLoggedIn) {
+        loginBtn.style.display = "none";
+        signupBtn.style.display = "none";
+        profileBtn.style.display = "inline-block";
+        logoutBtn.style.display = "inline-block";
+      } else {
+        loginBtn.style.display = "inline-block";
+        signupBtn.style.display = "inline-block";
+        profileBtn.style.display = "none";
+        logoutBtn.style.display = "none";
+      }
+
+      logoutBtn.addEventListener("click", function () {
+        loginBtn.style.display = "inline-block";
+        signupBtn.style.display = "inline-block";
+        profileBtn.style.display = "none";
+        logoutBtn.style.display = "none";
+      });
+      function showEnglishForm() {
+        document.getElementById("englishForm").style.display = "block";
+        document.getElementById("marathiForm").style.display = "none";
+      }
+
+      function showMarathiForm() {
+        document.getElementById("englishForm").style.display = "none";
+        document.getElementById("marathiForm").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .main-div {
+        background-image: url("https://www.cnil.fr/sites/cnil/files/styles/contenu_generique_visuel/public/2023-05/IA%20g%C3%A9n%C3%A9rative.png?itok=hQXiL2Nz");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        animation: fadeIn 1s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .container {
+        box-shadow: 5px 5px 10px 5px rgb(143, 138, 138),
+          -5px -5px 10px -5px rgb(143, 138, 138);
+        background-color: #f1e6f3;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 150px;
+        height: 500px;
+        width: 350px;
+        max-width: 300px;
+      }
+      h2 {
+        color: #230f68;
+      }
+      input,
+      select {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+        color: #230f68;
+        width: 226px;
+      }
+      button {
+        background-color: #230f68;
+        color: white;
+        font-size: 17px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 10px;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #3498db;
+      }
+      .signup-link {
+        color: #230f68;
+        text-decoration: none;
+        margin-top: 10px;
+        display: block;
+      }
+      .signup-link:hover {
+        color: #3498db;
+      }
+      /* Alert Box Styles for Top Right Corner */
+      .alert-box {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        text-align: center;
+        z-index: 1000;
+      }
+      .alert-box.show {
+        display: block;
+      }
+      .alert-box button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .alert-box button:hover {
+        background-color: #555;
+      }
+    </style>
+    <script>
+      function validateForm() {
+        let password = document.forms["signupForm"]["password"].value;
+        let confirmPassword =
+          document.forms["signupForm"]["confirmPassword"].value;
+
+        // If passwords do not match
+        if (password !== confirmPassword) {
+          showAlert("Your passwords don't match. Please re-enter.");
+          return false;
+        }
+      }
+
+      // Function to show alert box
+      function showAlert(message) {
+        let alertBox = document.getElementById("alertBox");
+        alertBox.innerHTML = message;
+        alertBox.classList.add("show");
+
+        // Hide alert box after 3 seconds
+        setTimeout(function () {
+          alertBox.classList.remove("show");
+        }, 3000);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main-div" style="height: 729px">
+      <div class="container">
+        <h2>SIGN UP</h2>
+        <form
+          name="signupForm"
+          action="/signup"
+          method="post"
+          onsubmit="return validateForm()"
+        >
+          <input
+            type="text"
+            name="firstName"
+            placeholder="First Name"
+            required
+          /><br />
+
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            required
+          /><br />
+
+          <input
+            type="email"
+            name="emailId"
+            placeholder="Email ID"
+            required
+          /><br />
+
+          <input
+            type="text"
+            name="username"
+            placeholder="User Id"
+            required
+          /><br />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          /><br />
+
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          /><br />
+
+          <button type="submit">Submit</button>
+        </form>
+        <a href="./login" class="signup-link">Already have an account? Login</a>
+      </div>
+    </div>
+
+    <!-- Custom Alert Box -->
+    <div id="alertBox" class="alert-box">
+      <span id="alertMessage"></span>
+      <button
+        onclick="document.getElementById('alertBox').classList.remove('show')"
+      >
+        Close
+      </button>
+    </div>
+  </body>
+</html>
