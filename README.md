@@ -1,4 +1,4 @@
-# Video Summarization Project
+# Video Summarization For Marathi Language Project
 
 The **Video Summarization Platform** using Python Flask is a comprehensive web app designed to summarize Marathi and English videos while providing summaries in **Hindi**, **Marathi**, and **English** languages. Leveraging machine learning and natural language processing (NLP) techniques, this platform offers a sophisticated solution for efficiently extracting key information from videos.
 
