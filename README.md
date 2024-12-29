@@ -2,6 +2,17 @@
 
 The **Video Summarization Platform** using Python Flask is a comprehensive web app designed to summarize Marathi and English videos while providing summaries in **Hindi**, **Marathi**, and **English** languages. Leveraging machine learning and natural language processing (NLP) techniques, this platform offers a sophisticated solution for efficiently extracting key information from videos.
 
+## Repositories
+This project is divided into two separate repositories for better security and organization:
+
+Backend Code (Private Repository):
+
+The backend code, which handles video processing, speech recognition, and summary generation, is maintained in a private repository.
+Repository Link: Private Backend Repository (Access restricted).
+Frontend Code (Public Repository):
+
+This repository contains the frontend code, providing the user interface for video uploads, summary viewing, and file downloads.
+
 ## Features
 
 - **Video Upload and Processing:** Upload video files, and the platform will convert them into text (speech recognition) and generate a summary.
