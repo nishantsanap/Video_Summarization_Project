@@ -8,7 +8,8 @@ This project is divided into two separate repositories for better security and o
 Backend Code (Private Repository):
 
 The backend code, which handles video processing, speech recognition, and summary generation, is maintained in a private repository.
-Repository Link: Private Backend Repository (Access restricted).
+Repository Link: [Private Backend Repository (Access restricted)](https://github.com/nishantsanap/video-summarization-backend).
+
 Frontend Code (Public Repository):
 
 This repository contains the frontend code, providing the user interface for video uploads, summary viewing, and file downloads.
